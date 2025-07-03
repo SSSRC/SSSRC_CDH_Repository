@@ -2,7 +2,7 @@
 #include "Outer_Interrupt.h"
 
 //マクロ設定
-#define MAINCORE_INTERRUPT_INPUT_PIN PIN_23
+#define MAINCORE_INTERRUPT_INPUT_PIN PIN_D23
 // ----------------------------------------------------
 // メインコアの初期設定
 // ----------------------------------------------------
