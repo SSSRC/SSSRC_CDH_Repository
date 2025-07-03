@@ -1,6 +1,8 @@
 #include <MP.h>
 #include "Outer_Interrupt.h"
 
+//マクロ設定
+#define MAINCORE_INTERRUPT_INPUT_PIN PIN_23
 // ----------------------------------------------------
 // メインコアの初期設定
 // ----------------------------------------------------
@@ -11,7 +13,7 @@ void setup() {
 
   // 割り込みピンを設定
   pinMode(MAINCORE_INTERRUPT_PIN, INPUT_PULLDOWN);
-  attachInterrupt(digitalPinToInterrupt(MAINCORE_INTERRUPT_PIN), main_core_isr, RISING);
+  attachInterrupt(digitalPinToInterrupt(MAINCORE_INTERRUPT_INPUT_PIN), main_core_isr, RISING);
 
   // --- マルチコアの開始 ---
   MP.begin();
@@ -32,6 +34,7 @@ void loop() {
     for(i=0;i<=5;i++){
       digitalWrite(LED0_PIN, HIGH);
       delay(500);
+      digitalWrite(LED0_PIN, LOW);
     };
   };
 }
