@@ -19,7 +19,6 @@ void setup() {
   MP.begin();
   // srcフォルダにあるサブコアコードを、コア1にロードして実行開始
   MP.load(1, "SubCore1"); 
-  MP.load(2, "SubCore2");
 
   Serial.println("Main core: Setup finished. Waiting for interrupt...");
 }
